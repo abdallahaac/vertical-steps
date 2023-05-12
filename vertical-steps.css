@@ -3,7 +3,7 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Arial, sans-serif;
-	height: 200vh;
+	height: 100vh;
 }
 
 /* Container for the steps and progress bar */
@@ -21,7 +21,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 50px;
-	opacity: 0.2;
 	transform: translateY(50px);
 	transition: opacity 0.5s ease, transform 0.5s ease;
 }
@@ -33,7 +32,7 @@ body {
 
 .step.disabled {
 	opacity: 0.2;
-	transform: translateY(50px);
+	transform: translateY(100px);
 }
 
 /* Style for step icon */
@@ -47,11 +46,6 @@ body {
 	align-items: center;
 	margin-bottom: 10px;
 	z-index: 2;
-}
-
-.step .icon i {
-	color: #8a8a8a;
-	font-size: 24px;
 }
 
 /* Style for step title */
@@ -81,14 +75,14 @@ body {
 	left: 50%;
 	transform: translateX(-50%);
 	width: 2px;
-	height: 180px;
+	height: 200px;
 	background-color: #eee;
 	transition: height 0.5s ease;
 	z-index: -2;
 }
 .loader {
 	width: 2px;
-	height: 20px;
+	height: 0px;
 	background-color: #5284f2;
 
 	transition: height 0.5s ease;
