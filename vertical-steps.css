@@ -1,0 +1,142 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+	height: 200vh;
+}
+
+/* Container for the steps and progress bar */
+.step-container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Style for each step */
+.step {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 50px;
+	opacity: 0.2;
+	transform: translateY(50px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.step:first-of-type {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.step.disabled {
+	opacity: 0.2;
+	transform: translateY(50px);
+}
+
+/* Style for step icon */
+.step .icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+	z-index: 2;
+}
+
+.step .icon i {
+	color: #8a8a8a;
+	font-size: 24px;
+}
+
+/* Style for step title */
+.step .title {
+	font-size: 18px;
+	color: #3d3d3d;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+/* Style for step info */
+.step .info {
+	font-size: 14px;
+	color: #8a8a8a;
+}
+
+/* Style for progress bar */
+.connector {
+	position: relative;
+	height: 50px;
+	margin-bottom: 50px;
+}
+
+.progress-bar {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 2px;
+	height: 180px;
+	background-color: #eee;
+	transition: height 0.5s ease;
+	z-index: -2;
+}
+.loader {
+	width: 2px;
+	height: 20px;
+	background-color: #5284f2;
+
+	transition: height 0.5s ease;
+}
+.step.active + .connector .progress-bar {
+	height: 0%;
+}
+
+/* Change the color of the active step title, icon, and border to blue */
+.step.active .title {
+	color: #5284f2;
+}
+
+.step.active .icon i {
+	color: #5284f2;
+}
+
+.step.active {
+	border: 2px solid #5284f2;
+}
+
+/* Change the color of the next step title, icon, and border to blue */
+.step.active + .connector + .step .title {
+	color: #5284f2;
+}
+
+.step.active + .connector + .step .icon i {
+	color: #5284f2;
+}
+
+.step.active + .connector + .step {
+	border: 2px solid #5284f2;
+}
+
+/* Animation for steps and progress bar */
+.step.animate-in {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.progress-bar.animate-in {
+	height: 100%;
+}
+
+.icon {
+	transition: border 300ms ease-in-out;
+	border: 1px solid rgb(53, 116, 251) !important;
+}
+.fa {
+	color: rgb(151, 176, 231) !important;
+}
